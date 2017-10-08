@@ -4,15 +4,19 @@ email: 'your_email@domain.com'
 description: >
   A description of your website, use the same one as you use within your package description! (Note; Use > for multi-line descriptions).
 
+# File System Defaults
+source: ./src
+destination: ./dist
+
 # Handling Readings
 include:
   - '_pages'
 
 exclude:
   - '.gitignore'
-  - '*.json'
   - 'README.md'
   - 'gulpfile.js'
+  - 'config.json'
 
 strict_front_matter: true
 
