@@ -1,0 +1,30 @@
+# Site Details
+name: 'Site Name'
+email: 'your_email@domain.com'
+description: >
+  A description of your website, use the same one as you use within your package description! (Note; Use > for multi-line descriptions).
+
+# Handling Readings
+include:
+  - '_pages'
+
+exclude:
+  - '.gitignore'
+  - '*.json'
+  - 'README.md'
+  - 'gulpfile.js'
+
+strict_front_matter: true
+
+# Conversion
+incremental: true
+
+# Serving
+baseurl: '/'
+url: 'http://localhost:8080'
+
+# Outputting
+permalink: pretty
+timezone: Europe/London
+
+# Plugins

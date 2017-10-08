@@ -1,0 +1,11 @@
+# Node
+node_modules/
+logs
+*.log
+
+# Jekyll
+_site/
+.jekyll-metadata
+
+# Sass
+.sass_cache/
