@@ -6,7 +6,7 @@ const gulp = require('gulp'),
 			cache = require('gulp-cache'),
 			concat = require('gulp-concat'),
 			cssnano = require('gulp-cssnano'),
-			imagemin = require('gulp-imagmin'),
+			imagemin = require('gulp-imagemin'),
 			rename = require('gulp-rename'),
 			uglify = require('gulp-uglify'),
 			gutil = require('gulp-util'),
@@ -58,4 +58,41 @@ gulp.task('image', function(cb) {
 		gulp.dest('dist/assets/img'),
 		browsersync.stream()
 	], cb)
+})
+
+gulp.task('browsersync', function() {
+	browsersync.init({
+		server: {
+			baseDir: 'dist'
+		},
+		port: 8080
+	})
+})
+
+gulp.task('build', function(cb) {
+	runsequence(
+		'clean',
+		['jekyll', 'sass', 'js', 'image'],
+		cb
+	)
+})
+
+gulp.task('clean', function() {
+	return del(['dist/**/*'])
+})
+
+gulp.task('watch', function() {
+	gulp.watch('src/**/*.{html,md}', ['jekyll'])
+	gulp.watch('src/assets/css/**/*.{sass,scss}', ['sass'])
+	gulp.watch('src/assets/js/**/*.js', ['js'])
+	gulp.watch('src/assets/img/**/*', ['image'])
+})
+
+gulp.task('default', function(cb) {
+	runsequence(
+		'build',
+		'browsersync',
+		'watch',
+		cb
+	)
 })
