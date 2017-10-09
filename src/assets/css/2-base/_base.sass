@@ -1,0 +1,148 @@
+/*
+	This file is used to define your projects base styles. This refers to any reset and base styles that you wish to apply to this project, for example:
+
+	- Element styling (Typographic sizing and font types, etc.)
+	- Unwanted browser styles (Removing ul margins, etc.)
+
+	These are the main types of styles that you should be implementing within this file, and focusing predominantly towards low specificity things like tag names (i.e button or ul).
+	I have included a sample base stylesheet using the font found within the _fonts.scss file, and specified some other styles I like to use within my projects as a starting point! By each style i've included a brief comment explaining its purpose, and added some suggestions towards better values that are dependant on the type of project. */
+
+/* ================ Body ================ */
+
+/*
+	These are the base body styles of your website. Most styles are fairly standard, however there are a few that're fairly important! Firstly, see how variables are referenced which are defined within the 2-base/_variables.sass file, saving typing space and helping you to manage your css files more effectively! Sweet! Secondly the font-size is set to 16px, this is very important as these pixel dimensions are used as the base rem units throughout the project files, such that 1rem = 16px. By doing this you will be able to scale your font-size with ease for larger/smaller viewports. For example, if you change this font size to 24px, every other element that uses rem's for its dimensions will now use 24px as the base, so elements will look enlarged. */
+
+html, body
+	font-family: $roboto
+	font-size: 16px
+	line-height: 1
+	color: $font-color
+	background-color: #F5F5F5
+	max-width: 100%
+	position: relative
+	-webkit-font-smoothing: antialiased !important
+
+/* ================ Box Sizing ================ */
+
+/*
+	Box-sizing allows us to take into account padding and margins when
+	specifying the height and width of an element, this means that instead of increasing the size of the element (essentially adding padding and margin to the width and height of the element), these values are accounted for whilst maintaining the specifying the original height and width of the element! */
+
+*
+  box-sizing: border-box
+
+*::before,
+*::after
+  box-sizing: border-box
+
+/* ================ Selections ================ */
+
+/*
+	The properties below handle selection of elements, from selecting a link on a mobile/tablet device (-webkit-tap-highlight-color) to selecting images and text content (::seletion/img::selection). I recommend using the highlight color, as this by nature will stand out from the other elements on the page. But if you want to use a different color you can change $highlight to be something else! */
+
+body
+	-webkit-tap-highlight-color: transparentize($highlight, 0.8)
+
+::selection, img::selection
+  background: transparentize($highlight, 0.8)
+
+/* ================ Forms ================ */
+
+/*
+	Forms can be very complex, and usually require a great deal of theming. Therefore, it is likely that you will want to add specific styles here, maybe all forms in your website are centered inside the parent container? You could add this here! */
+
+textarea
+	resize: vertical
+
+input, textarea, select
+	font-family: inherit
+	outline: none
+	border: none
+
+	&:focus
+		outline: none
+
+/* ================ Buttons ================ */
+
+/*
+	The styles below are all dependant on the design, and therefore interchangable. For example, you may want your list items to be appended with the standard dot. Therefore, you can remove list-style-type: none from the li selector! */
+
+button
+	font-family: inherit
+	border: none
+
+	&:focus
+		outline: none
+
+/* ================ List Styles ================ */
+
+ul, ol
+	padding: 0
+	margin: 0
+	list-style: none
+
+li
+  list-style-type: none
+
+/* ================ Line Breaks ================ */
+
+hr
+	height: 1px
+	border: none
+	border-bottom: 1px solid $silver
+	margin: 20px 0
+
+/* ================ Typography ================ */
+
+/*
+	These are the typographic styles, as you can see in this example the open-sans font family is used for extreme titles (.huge/.large), otherwise roboto is preferred. This is just to get you started! You'll need to edit these styles based on your font-preferences, sizes, colors, etc. */
+
+.huge, .large, h1, h2, h3, h4, h5, h6, p
+	color: $font-color
+	margin: 0
+
+.huge, .large, h1, h2
+	font-family: $open-sans
+	font-weight: bold
+
+h3, h4, h5, h6, p
+	font-family: $roboto
+	font-weight: normal
+
+.huge
+	font-size: 4rem
+	line-height: 1.20
+
+.large
+	font-size: 3rem
+	line-height: 1.15
+
+h1
+	font-size: 2.5rem
+	line-height: 1.10
+
+h2
+	font-size: 2rem
+	line-height: 1.05
+
+h3
+	font-size: 1.8rem
+
+h4
+	font-size: 1.6rem
+
+h5
+	font-size: 1.4rem
+
+h6
+	font-size: 1.2rem
+
+p
+	line-height: 1.60
+
+.container
+	width: 60rem
+	margin: 0 auto
+	background-color: $white
+	margin-top: 1rem
+	margin-bottom: 1rem

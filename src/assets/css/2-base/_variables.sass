@@ -1,0 +1,74 @@
+/*
+	This is your projects variables file! In sass you can use variables to store styles, and then reference them in other sass files by name. For example, you might define a variable in this file like so:
+
+		$font-color: #263238
+
+	Then inside the 2-base/_base.sass file (or any other sass file for that matter), you can reference the font color variable: $font-color, rather than the hex value #263238, like so:
+
+		h1
+			color: $font-color
+
+	By doing this your style sheets become easier to maintain and modify in the future. For example, if you decided to change the $font-color variable to black, you would change the hex value of the $font-color variable to #000. Then every time the $font-color variable is referenced within other files the color would change to reflect this variable, saving you time manually changing the font color across all files and elements. Pretty neat huh!
+	This is not just restricted to colors, you are free to store all kinds of things like media queries widths! For example:
+
+		$tablet: 'max-width: 992px'
+
+	Awesome! */
+
+/* ================ Fonts ================ */
+
+$roboto: 'Roboto', sans-serif
+$open-sans: 'Open Sans', sans-serif
+
+/* ================ Colors =============== */
+
+$font-color: #263238
+$primary: #fff
+
+/*
+	If you have a very complex color palette, continue adding your colors using number names, like so:
+
+	$secondary
+	$tertiary
+	$quaternary
+	$quinary
+	$senary
+	$septenary
+	$octonary
+	$nonary
+	$denary
+
+	I have included 10 number names for your benefit, however it is highly unlikely you will require use of them all!
+	If you're having trouble figuring out which color palettes to use, be sure to visit google colors: https://material.io/guidelines/style/color.html#color-color-palette for ideas. */
+
+$highlight: #ba68c8
+
+// Extra colors that are always of use within any project is greyscale colors.
+
+$white: #fff
+$silver: #ddd
+$grey: #9E9E9E
+$black: #000
+
+/* ================ Images =============== */
+
+/*
+	An important thing to note about relative links is that all assets are relative from the main.css file within the dist directory. By doing ../../ you will jump back two directorys and are now located within the dist directory, you then specify assets to step into the assets directory. By joining the $base variable with the $img variable you are then located inside the assets/img directory of the dist folder, where you can easily specify the image you want! */
+
+$base: '../../assets'
+$img: '/img'
+
+$starterkit-image: '#{$base}#{$img}/starterkit-v1-logo.png'
+
+/* ================ Breakpoints =============== */
+
+/*
+	Another useful collection of variables is specifying standard breakpoint numbers for responsiveness! But please, do not restrict yourself to these values, be sure to create new breakpoints as you develop. This ensuring all elements look great, irrespective of the viewport!
+
+	Another point to add is whether you choose a mobile-first or desktop-first approach. If you approach your project designing for mobile viewports, then you need to think about scaling outwards (for tablets, desktops etc), otherwise you need to think inversely (for tablets, mobiles etc). The media breakpoints specified below cater for mobile-first developmental approaches, but you can change the values of $phone-only, $tablet-portrait, $tablet-landscape and $desktop to use max-width for desktop-first approaches. */
+
+$phone-only: 'max-width: 599px'
+$tablet-portrait: 'min-width: 600px'
+$tablet-landscape: 'min-width: 900px'
+$desktop: 'min-width: 1200px'
+$desktop-large: 'min-width: 1800px'

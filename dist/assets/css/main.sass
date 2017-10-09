@@ -1,0 +1,35 @@
+/*
+	This file is used to import all of the code found within the the following folders, for the following purposes:
+
+	1-tools: Contains external code resources such as bourbon, a lightweight sass mixin library to support development.
+
+	2-base: Contains base project styles such as typography presets, mixins and variables.
+
+	3-modules: Contains self contained modules which may be used across several pages, such as headers, navigation mechanisms etc.
+
+	4-pages: Contains page specific styles which are not reusable and only occur on a page by page basis.
+
+	Though implementing the code in such a way, you can have more control over the final css output, and develop more efficient stylesheets. An example of this may be that despite having bourbon available, you don't actually require this tool in your project, therefore you can comment the import statement out and the size of our outputted css file is not affected! Awesome right? */
+
+/* ================ Tools ================ */
+
+// @import 1-tools/bourbon/bourbon
+@import 1-tools/fonts
+@import 1-tools/normalize
+
+/* ================ Base ================= */
+
+@import 2-base/variables
+@import 2-base/base
+@import 2-base/placeholders
+// @import 2-base/mixins
+// @import 2-base/placeholders
+
+/* ================ Modules ============== */
+
+// @import 3-modules/buttons
+@import 3-modules/header
+
+/* ================ Pages ================ */
+
+@import 4-pages/index

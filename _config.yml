@@ -24,8 +24,7 @@ strict_front_matter: true
 incremental: true
 
 # Serving
-baseurl: '/'
-url: 'http://localhost:8080'
+url: 'http://localhost:8080/'
 
 # Outputting
 permalink: pretty
