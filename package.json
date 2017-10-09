@@ -36,7 +36,11 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
     "pump": "^1.0.2",
     "run-sequence": "^2.2.0"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
   }
 }
