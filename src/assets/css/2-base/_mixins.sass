@@ -1,0 +1,29 @@
+/*
+	This file is used to define your projects mixins! Mixins are small functions that can be used to simplify sass code by grouping chunks of css declarations into a single reusable block! For example, lets create a mixin to help pull in and position background images more effectively:
+
+		=background-image($image-url, $repeat, $position, $size)
+			background: url($image-url) $repeat $position
+			background-size: $size
+
+	As you can see this mixin takes parameters allowing you to specify the following things:
+
+	1) The image to load in, via a url.
+	2) Whether or not to repeat the image.s
+	3) A position for the image.
+	4) The size of the image.
+
+	By using parameters to control the behaviour of the mixin, the mixin is abstracted, and can be utilised in many different situations.
+
+	Now that the mixin has been defined, you can call it in your other files by using:
+
+		#hero
+			+background-image($starterkit-image, no-repeat, center, contain)
+
+	See how the code is confined to a single line, even though the mixin includes 2 different property/value pairs? Cool right!
+	You will more than likely require several mixins within your project, however if these are very general mixins, they may already been defined by mixin vendors like Bourbon. If you are unsure of what Bourbon provides you can visit http://bourbon.io/ to learn more, and check whether the mixins they provide are beneficial to you! If you find some mixins that could be of use, open the main.sass file and uncomment the import statement for bourbon to make use the library!
+
+	Within this file I have included the sample mixin used in the example above as a starting point! */
+
+=background-image($image-url, $repeat, $position, $size)
+	background: url($image-url) $repeat $position
+	background-size: $size
