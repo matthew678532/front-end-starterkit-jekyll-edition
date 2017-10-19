@@ -1,0 +1,42 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+---
+
+<div class="page-title">
+	<h1>{{ page.title }}</h1>
+</div>
+
+<div class="blogs-container">
+	<div class="blog-container">
+		<h2>Jekyll</h2>
+		<ul class="post-list">
+			{% for post in site.posts %}
+				{% if post.categories contains 'jekyll' %}
+					<a href="{{ post.url }}">
+						<li class="post">
+							<h3>{{ post.title }}</h3>
+							<p>{{ post.excerpt | truncate: 50 }}</p>
+						</li>
+					</a>
+				{% endif %}
+			{% endfor %}
+		</ul>
+	</div>
+	<div class="blog-container">
+		<h2>Sass</h2>
+		<ul class="post-list">
+			{% for post in site.posts %}
+				{% if post.categories contains 'sass' or post.categories contains 'scss' %}
+					<a href="{{ post.url }}">
+						<li class="post">
+							<h3>{{ post.title | trucate: 20 }}</h3>
+							<p>{{ post.excerpt }}</p>
+						</li>
+					</a>
+				{% endif %}
+			{% endfor %}
+		</ul>
+	</div>
+</div>
