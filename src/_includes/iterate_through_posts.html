@@ -1,0 +1,13 @@
+<h2><a href="/blog/{{ include.name }}/">{{ include.name | capitalize }}</a></h2>
+<ul class="post-list">
+	{% for post in site.posts %}
+		{% if post.categories contains include.name %}
+			<a href="{{ post.url }}">
+				<li class="post">
+					<h3>{{ post.title }}</h3>
+					<p>{{ post.excerpt | truncate: 50 }}</p>
+				</li>
+			</a>
+		{% endif %}
+	{% endfor %}
+</ul>
