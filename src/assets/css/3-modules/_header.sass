@@ -1,35 +1,51 @@
 #header
 	+background-image($hero-image, no-repeat, center, cover)
-	position: relative
-	height: 20rem
-	background-color: $white
-	border-bottom: solid 0.5rem $font-color
-	text-align: center
+	height: 24rem
 
-	& > h1, #nav
+	.overlay
+		background-color: transparentize($black, 0.4)
+		height: inherit
+		width: inherit
 		position: relative
+
+	#navbar
+		padding: 1rem 2rem
+		position: relative
+
+		&::after
+			@extend %clearfix
+
+		& > h1
+			color: $white
+			text-shadow: 2px 2px 0px $black
+			float: left
+
+		#nav
+			float: right
+
+			.nav-items
+				display: inline-block
+				line-height: 3
+
+				&:not(:last-child)
+					margin-right: 1rem
+
+				a
+					color: $grey
+					text-decoration: none
+					text-shadow: 1px 1px 0px $black
+					transition: color 350ms ease-in-out
+
+					&:hover
+						color: white
+
+	.page-title
+		position: absolute
 		top: 50%
 		transform: translateY(-50%)
+		text-align: center
+		width: 100%
 
-	& > h1
-		color: $white
-		text-shadow: 2px 2px 0px $black
-
-#nav
-	padding-bottom: 2rem
-
-	.nav-items
-		display: inline-block
-
-		&:not(:last-child)::after
-			content: '|'
-			margin: 0 1rem 0 1.2rem
-
-		a
-			color: $grey
-			text-decoration: none
-			text-shadow: 1px 1px 0px $black
-			transition: color 350ms ease-in-out
-
-			&:hover
-				color: white
+		& > h2
+			color: $white
+			text-shadow: 1.5px 1.5px 0px $black
