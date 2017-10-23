@@ -1,0 +1,36 @@
+.posts
+	margin-top: 1rem
+
+	&::after
+		@extend %clearfix
+
+	.all-posts
+		float: left
+		width: 68%
+		margin-right: 4%
+		display: flex
+		flex-wrap: wrap
+
+	.latest-posts
+		float: right
+		width: 28%
+		background-color: $white
+		padding: 1rem
+
+		& > h4
+			margin-bottom: 1rem
+
+		.latest-post
+			display: flex
+			margin: 1rem 0
+
+			.post-image
+				width: 18%
+				height: 100%
+				border-radius: 50%
+				margin-right: 4%
+
+			.post-details
+
+				.post-title
+					margin-bottom: 0.5rem

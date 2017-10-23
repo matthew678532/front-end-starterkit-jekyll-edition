@@ -1,0 +1,13 @@
+{% for post in site.posts %}
+	{% if post.categories contains include.name %}
+		<div class="post">
+			{% if post.image %}
+				<img class="post-image" src="/assets/img/{{ post.image }}.png" alt="{{ post.image }}">
+			{% endif %}
+			<div class="post-details">
+				<h4 class="post-title">{{ post.title }}</h4>
+				<p class="post-snippet">{{ post.excerpt | truncate: 50 }}</p>
+			</div>
+		</div>
+	{% endif %}
+{% endfor %}

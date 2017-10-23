@@ -4,11 +4,24 @@ title: Blog
 permalink: /blog/
 ---
 
-<div class="blogs-container">
-	<div class="blog-container">
-		{% include iterate_through_posts.html name='jekyll' %}
-	</div>
-	<div class="blog-container">
-		{% include iterate_through_posts.html name='sass' %}
-	</div>
-</div>
+<main class="container-wide">
+	<ul class="blog-categories">
+		<a href="/blog/"><li class="blog-category">All</li></a>
+		{% for category in site.categories %}
+			{% assign cat = category[0] %}
+			{% if cat contains 'blog-' %}
+			{% else %}
+				<a href="/blog/{{ cat }}"><li class="blog-category">{{ cat | capitalize }}</li></a>
+			{% endif %}
+		{% endfor %}
+	</ul>
+	<section class="posts">
+		<section class="latest-posts">
+			<h4>Latest Posts:</h4>
+			{% include iterate_through_posts.html limit="5" parent="latest-post" %}
+		</section>
+		<section class="all-posts">
+			{% include iterate_through_posts.html parent="post" %}
+		</section>
+	</section>
+</main>

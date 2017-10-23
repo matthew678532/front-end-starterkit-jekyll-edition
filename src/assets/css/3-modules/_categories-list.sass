@@ -1,0 +1,17 @@
+.blog-categories
+		a
+			text-decoration: none
+			color: $white
+
+			&:hover .blog-category
+				transform: translateY(-0.25rem)
+
+			.blog-category
+				display: inline-block
+				padding: 0.5rem
+				background-color: $highlight
+				border-radius: 0.2rem
+				transition: transform 150ms ease-in-out
+
+				&:not(:last-child)
+					margin-right: 0.5rem
